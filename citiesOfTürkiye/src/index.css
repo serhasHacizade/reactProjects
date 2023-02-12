@@ -1,0 +1,64 @@
+html {
+    background: #f8f8ff;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.img {
+    width: 700px;
+    height: 395px;
+    border-bottom: 2px solid black;
+}
+
+.sectionCenter {
+    margin: 5px auto;
+
+}
+
+.cityItem {
+    border: 2px solid black;
+    width: 700px;
+    display: grid;
+    margin: 40px auto;
+    height: 550px;
+    box-shadow: -50px -50px 0 -40px tomato,
+    50px 50px 0 -40px tomato;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+.btnContainer {
+    padding: 40px 0 5px 0;
+    
+}
+.filterBtn {
+    cursor: pointer;
+    margin: 0 4px;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-color: tomato;
+}
+.filterBtn:hover {
+    color: #fff;
+    background-color: tomato;
+    border-color: tomato;
+}
+h3 {
+    display: inline;
+    padding: 5px;
+    border-bottom: 3px solid tomato;
+}
