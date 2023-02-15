@@ -1,0 +1,192 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  font-family: "Poppins", sans-serif;
+}
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    background-color: #f8f9fd;
+  }
+  
+  .text,
+  .password {
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .submit {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 0.7rem;
+    background: #01d28e;
+    border: transparent;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .submit:hover {
+    background: #6cf0c2;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .loginForm {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .listContainer {
+    display: flex;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+}
+
+ul, li {
+  margin: 0;
+  font-size: 1rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 10px 5px 10px 5px;
+  background-color: #01d28e;
+  height: 4%;
+}
+a {
+  margin: 0 10px 10px 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  color: black;
+}
+
+.homePage {
+  text-align: center;
+  margin: 200px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.usersPage {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFAFA;
+  border: 2px solid black;
+  width: 600px;
+  height: 550px;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid black;
+  margin: 0;
+  height: 30px;
+  border-radius: 7px 7px 0 0;
+  padding: 15px 10px 15px 10px;
+  text-align: center;
+  background-color: #FFFAFA;
+}
+
+.usersList {
+  margin: 10px 5px 10px 20px;
+}
+
+.userDetailPage {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFAFA;
+  border: 2px solid black;
+  width: 600px;
+  height: 550px;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+}
+pre {
+  margin: 20px 0 0 30px;
+}
+
+.userDetailBtn {
+  display: flex;
+  margin: 25px 10px;
+  justify-content: right;
+}
+
+.nextBtn {
+  border: 1px solid black;
+  width: 180px;
+  text-align: center;
+  background-color: #01d28e;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.backBtn {
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  background-color: #01d28e;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.businessCard {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 618.5px;
+  position: relative;
+}
+
+.profile {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  right: 150px;
+  top: 100px;
+}
+.personalInfo {
+  height: 618px;
+  width: 1280px;
+
+}
