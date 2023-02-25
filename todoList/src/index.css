@@ -51,10 +51,6 @@ h1 {
   border: none;
 }
 
-.input::placeholder {
-  padding-left: 30px;
-}
-
 .button {
   width: 65px;
   padding: 4px;
