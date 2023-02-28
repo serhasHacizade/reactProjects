@@ -1,0 +1,106 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #FAEBD7;
+    letter-spacing: .9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    height: 300px;
+}
+
+h1 {
+    text-align: center;
+    
+}
+/* lets make first div */
+.firstlight {
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-right: 20px;
+    border-radius: 15px;
+    background: #fff;
+}
+.lightbtn {
+    width: 120px;
+    padding: 10px 0;
+    margin: 5px auto;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.innerlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    text-align: center;
+    width: 160px;
+    height: 90px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
+.innerdark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+    width: 160px;
+    height: 90px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
+.darkbtn {
+    width: 120px;
+    padding: 10px 0;
+    margin: 5px auto;
+    background: black;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
+
+.firstdark {
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    margin-right: 20px;
+    background: black;
+}
+
+.h1dark {
+    color: #fff;
+}
+
+
+.secondlight {
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-right: 20px;
+    border-radius: 15px;
+    background: #fff;
+}
+.seconddark {
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    margin-right: 20px;
+    background: black;
+}
