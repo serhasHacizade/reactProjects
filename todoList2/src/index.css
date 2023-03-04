@@ -1,0 +1,125 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #FAEBD7;
+    letter-spacing: .9px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.todoApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    min-height: 500px;
+    margin: 5rem auto;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newTodo {
+    width: 250px;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.newTodo::placeholder {
+    font-size: 1rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+.todoList {
+    width: 400px;
+    padding-left: 0;
+}
+
+
+.footer {
+    display: flex;
+    margin-bottom: 0;
+    position: absolute;
+    height: 50px;
+    bottom: 10px;
+    width: 95%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container {
+    margin-bottom: 60px;
+}
+
+.filters {
+    display: flex;
+    padding-left: 0;
+}
+
+.count {
+    font-size: 11px;
+    font-weight: lighter;
+    width: 70px;
+}
+
+.link {
+    margin-right: 6px;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-weight: 500;
+    padding: 4px;
+}
+
+.clearCompleted {
+    padding: 4px;
+    height: 30px;
+    border: 1px solid #000;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+label {
+    padding-left: 10px;
+}
+
+
+.view {
+    width: 350px;
+    position: relative;
+    padding: 10px;
+    list-style-type: none;
+    background-color: #B0C4DE;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.delete {
+    position: absolute;
+    right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
