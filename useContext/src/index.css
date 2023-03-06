@@ -39,14 +39,14 @@ h1 {
     padding: 10px 0;
     margin: 5px auto;
     background: #fff;
-    border: 1px solid black;
+    border: 1px solid #252525;
     border-radius: 15px;
 }
 .innerlight {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid #252525;
     text-align: center;
     width: 160px;
     height: 90px;
@@ -70,7 +70,7 @@ h1 {
     width: 120px;
     padding: 10px 0;
     margin: 5px auto;
-    background: black;
+    background: #252525;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 15px;
@@ -82,7 +82,7 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 15px;
     margin-right: 20px;
-    background: black;
+    background: #252525;
 }
 
 .h1dark {
@@ -102,5 +102,5 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 15px;
     margin-right: 20px;
-    background: black;
+    background: #252525;
 }
