@@ -3,7 +3,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    background-color: #FAEBD7;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(81,9,121,1) 0%, rgba(0,255,130,1) 100%);
     letter-spacing: .9px;
     display: flex;
     justify-content: center;
