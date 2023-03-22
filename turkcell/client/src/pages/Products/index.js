@@ -1,7 +1,16 @@
-import React from 'react'
 import Card from "../../components/Card"
-import { Grid, Box } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
 const Products = () => {
+    const { isLoading, error, data } = useQuery(["repoData"], () =>
+        fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
+            res => res.json()
+        ),
+    )
+    if (isLoading) return "Loading...";
+    if (error) return "An error has occurred: " + error.message;
+    console.log(data);
+
     return (
         <div>
 
@@ -21,4 +30,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Products;
