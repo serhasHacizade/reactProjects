@@ -6,7 +6,7 @@ import moment from "moment";
 const Card = ({ item }) => {
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p="3">
-        <Link to="#/">
+        <Link to={`/product/${item._id}`}>
             <Image src={item.photos[0]} alt="Products" loading="lazy"/>
             <Box p="6">
                 <Box display="flex" alignItems="baseline">
