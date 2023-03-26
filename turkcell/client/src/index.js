@@ -1,10 +1,12 @@
 import React from "react";
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./reset.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import App from "./App";
+//context
+import { AuthProvider } from "./Context/AuthContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +24,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
