@@ -5,8 +5,13 @@ import validationSchema from "./validations";
 import { fetchRegister } from "../../../api";
 import { useAuth } from "../../../Context/AuthContext";
 
+//burası (kullanıcı girii gerektiren ekranlar)
+import { createBrowserHistory } from "@remix-run/router";
+
+
 
 const Signup = () => {
+  const history = createBrowserHistory();
   const { login } = useAuth();
   const formik = useFormik({
     initialValues: {
@@ -19,6 +24,8 @@ const Signup = () => {
       try {
         const registerResponse = await fetchRegister({ email: values.email, password: values.password });
         login(registerResponse)
+        //burası çalışmıyor
+        history.push("/profile");
       } catch (error) {
         bag.setErrors({ general: error.response.data.message })
       }

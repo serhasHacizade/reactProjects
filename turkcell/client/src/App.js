@@ -6,6 +6,8 @@ import Signin from "./pages/Auth/Signin";
 import Signup from "./pages/Auth/Signup"
 import ProductDetail from "./pages/ProductDetail"
 import Products from './pages/Products';
+import Profile from './pages/Profile';
+import ProtectedRoutes from './pages/ProtectedRoute';
 const App = () => {
     return (
         <div>
@@ -14,10 +16,13 @@ const App = () => {
                     <Navbar />
                     <div id="content">
                         <Routes>
-                            <Route path="/" exact Component={Products} />
-                            <Route path="/product/:product_id"  Component={ProductDetail} />
-                            <Route path="/signin" Component={Signin} />
-                            <Route path="/signup" Component={Signup} />
+                            <Route path="/" exact element={<Products />} />
+                            <Route path="/product/:product_id" element={<ProductDetail />} />
+                            <Route path="/signin" element={<Signin />} />
+                            <Route path="/signup" element={<Signup />} />
+                            <Route element = {<ProtectedRoutes />} >
+                                <Route path="/profile" element={<Profile />} exact/>
+                            </Route>
                         </Routes>
                     </div>
                 </div>
