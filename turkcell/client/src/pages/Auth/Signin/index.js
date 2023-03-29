@@ -5,13 +5,9 @@ import validationSchema from "./validations";
 import { fetchLogin } from "../../../api";
 import { useAuth } from "../../../Context/AuthContext";
 
-//burası
-import { createBrowserHistory } from "@remix-run/router";
 
 
-
-const Signin = () => {
-  const history = createBrowserHistory();
+const Signin = ({ history }) => {
   const { login } = useAuth();
   const formik = useFormik({
     initialValues: {

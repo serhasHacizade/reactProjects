@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail"
 import Products from './pages/Products';
 import Profile from './pages/Profile';
 import ProtectedRoutes from './pages/ProtectedRoute';
+import Basket from './pages/Basket';
 const App = () => {
     return (
         <div>
@@ -20,6 +21,7 @@ const App = () => {
                             <Route path="/product/:product_id" element={<ProductDetail />} />
                             <Route path="/signin" element={<Signin />} />
                             <Route path="/signup" element={<Signup />} />
+                            <Route path="/basket" element={<Basket />} />
                             <Route element = {<ProtectedRoutes />} >
                                 <Route path="/profile" element={<Profile />} exact/>
                             </Route>
