@@ -4,11 +4,12 @@ import { useFormik } from "formik";
 import validationSchema from "./validations";
 import { fetchLogin } from "../../../api";
 import { useAuth } from "../../../Context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 
-
-const Signin = ({ history }) => {
+const Signin = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -19,8 +20,7 @@ const Signin = ({ history }) => {
       try {
         const loginResponse = await fetchLogin({ email: values.email, password: values.password });
         login(loginResponse)
-        //burası çalışmıyor
-        history.push("/profile");
+        navigate("/profile")
         console.log(loginResponse);
       } catch (error) {
         bag.setErrors({ general: error.response.data.message })

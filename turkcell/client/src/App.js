@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Profile from './pages/Profile';
 import ProtectedRoutes from './pages/ProtectedRoute';
 import Basket from './pages/Basket';
+import Error404 from "./pages/Error404"
 const App = () => {
     return (
         <div>
@@ -25,6 +26,7 @@ const App = () => {
                             <Route element = {<ProtectedRoutes />} >
                                 <Route path="/profile" element={<Profile />} exact/>
                             </Route>
+                            <Route path="*" element={<Error404  />} />
                         </Routes>
                     </div>
                 </div>

@@ -1,34 +1,39 @@
-import { Alert, Image } from '@chakra-ui/react';
+import { Alert, Box, Button, Image, Text } from '@chakra-ui/react';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useBasket } from '../../Context/BasketContext'
 const Basket = () => {
 
-    const { items } = useBasket();
-    console.log(items);
-
+    const { items, removeFromBasket } = useBasket();
+    const total = items.reduce((acc, obj) => acc + obj.price, 0);
     return (
-        <div>
+        <Box p="5">
             {
                 items.length < 1 && <Alert status="warning">You have not any items in your basket</Alert>
             }
             {
                 items.length > 0 && <>
-                    <ul>
+                    <ul style={{listStyleType: "decimal"}}>
                         {
                             items.map(item => (
-                                <li key={item._id}>
+                                <li key={item._id} style={{marginBottom: 15}}>
                                     <Link to={`/product/${item._id}`}>
-                                        {item.title} - {item.price} $
-                                        <Image htmlWidth="200" src={item.photos} alt="Basket item"></Image>
+                                        <Text fontSize="16">{item.title} - {item.price} $</Text>
+                                        <Image htmlWidth="200" loading="lazy" src={item.photos} alt="Basket item"></Image>
                                     </Link>
+                                    <Button mt="2" size="sm" colorScheme="pink" onClick={() => removeFromBasket(item._id)}>
+                                        Remove from basket
+                                    </Button>
                                 </li>
                             ))
                         }
                     </ul>
                 </>
             }
-        </div>
+            <Box mt="10">
+                <Text fontSize="22">Total : {total}</Text>
+            </Box>
+        </Box>
     )
 }
 
