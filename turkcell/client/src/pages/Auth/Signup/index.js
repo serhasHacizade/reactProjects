@@ -4,14 +4,10 @@ import { useFormik } from "formik";
 import validationSchema from "./validations";
 import { fetchRegister } from "../../../api";
 import { useAuth } from "../../../Context/AuthContext";
-
-//burası (kullanıcı girii gerektiren ekranlar)
-import { createBrowserHistory } from "@remix-run/router";
-
-
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const history = createBrowserHistory();
+  const navigate = useNavigate();
   const { login } = useAuth();
   const formik = useFormik({
     initialValues: {
@@ -24,15 +20,12 @@ const Signup = () => {
       try {
         const registerResponse = await fetchRegister({ email: values.email, password: values.password });
         login(registerResponse)
-        //burası çalışmıyor
-        history.push("/profile");
+        navigate("/profile")
       } catch (error) {
         bag.setErrors({ general: error.response.data.message })
       }
     }
   });
-
-
 
   return (
     <Flex align="center" width="full" justifyContent="center">

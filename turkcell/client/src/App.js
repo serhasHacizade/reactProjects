@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import ProtectedRoutes from './pages/ProtectedRoute';
 import Basket from './pages/Basket';
 import Error404 from "./pages/Error404"
+import Admin from './pages/Admin';
 const App = () => {
     return (
         <div>
@@ -25,6 +26,9 @@ const App = () => {
                             <Route path="/basket" element={<Basket />} />
                             <Route element = {<ProtectedRoutes />} >
                                 <Route path="/profile" element={<Profile />} exact/>
+                            </Route>
+                            <Route element = {<ProtectedRoutes admin={true}/>} >
+                                <Route path="/admin" element={<Admin />} exact />
                             </Route>
                             <Route path="*" element={<Error404  />} />
                         </Routes>
