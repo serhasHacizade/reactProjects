@@ -1,18 +1,11 @@
-import Card from "../../components/Card"
+import Card from "../../components/Card";
 import { Box, Button, Flex, Grid } from "@chakra-ui/react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetchProductList } from "../../api"
+import { fetchProductList } from "../../api";
 import React from "react";
+
 const Products = () => {
-    const {
-        data,
-        error,
-        fetchNextPage,
-        hasNextPage,
-        isFetchingNextPage,
-        status,
-    } = useInfiniteQuery(["products"], fetchProductList,
-        {
+    const {data,error,fetchNextPage,hasNextPage,isFetchingNextPage,status} = useInfiniteQuery(["products"], fetchProductList,{
             getNextPageParam: (lastGroup, allGroups) => {
                 const morePageExist = lastGroup?.length === 15;
                 if (!morePageExist) return;
@@ -23,7 +16,6 @@ const Products = () => {
     if (status === "error") return "An error has occurred: " + error.message;
     return (
         <div>
-
             <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                 {
                     data.pages.map((group, index) => (

@@ -19,17 +19,16 @@ const AuthProvider = ({ children }) => {
                 setLoading(false);
             } catch (error) {
                 setLoading(false);
-
             }
         })()
     }, []);
 
     const login = data => {
         setLoggedIn(true);
-        setUser(data);
-
+        setUser(data.user);
         localStorage.setItem("access-token", data.accessToken);
         localStorage.setItem("refresh-token", data.refreshToken);
+        localStorage.setItem("loggedIn", true);
     };
 
     const logout = async (callback) => {
@@ -38,6 +37,9 @@ const AuthProvider = ({ children }) => {
         await fetchLogout();
         localStorage.removeItem("access-token");
         localStorage.removeItem("refresh-token");
+        localStorage.setItem("loggedIn", false);
+        localStorage.removeItem("basket");
+
         callback();
     };
 

@@ -24,13 +24,9 @@ const App = () => {
                             <Route path="/signin" element={<Signin />} />
                             <Route path="/signup" element={<Signup />} />
                             <Route path="/basket" element={<Basket />} />
-                            <Route element = {<ProtectedRoutes />} >
-                                <Route path="/profile" element={<Profile />} exact/>
-                            </Route>
-                            <Route element = {<ProtectedRoutes admin={true}/>} >
-                                <Route path="/admin" element={<Admin />} exact />
-                            </Route>
-                            <Route path="*" element={<Error404  />} />
+                            <Route path="/profile" element={<ProtectedRoutes ><Profile /></ProtectedRoutes>} ></Route>
+                            <Route path="/admin/*" element={<ProtectedRoutes admin={true}><Admin /></ProtectedRoutes>} ></Route>
+                            <Route path="*" element={<Error404 />} />
                         </Routes>
                     </div>
                 </div>
