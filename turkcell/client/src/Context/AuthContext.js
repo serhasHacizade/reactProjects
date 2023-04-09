@@ -38,7 +38,6 @@ const AuthProvider = ({ children }) => {
         localStorage.removeItem("access-token");
         localStorage.removeItem("refresh-token");
         localStorage.setItem("loggedIn", false);
-        localStorage.removeItem("basket");
 
         callback();
     };

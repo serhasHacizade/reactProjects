@@ -40,6 +40,6 @@ UserSchema.methods.isValidPass = async function (pass) {
 	return await bcrypt.compare(pass, this.password);
 };
 
-const User = mongoose.model("admin", UserSchema);
+const User = mongoose.model("user", UserSchema);
 
 export default User;
