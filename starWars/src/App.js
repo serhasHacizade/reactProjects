@@ -13,7 +13,7 @@ const App = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("https://reacthttp-1e5eb-default-rtdb.firebaseio.com/movies.json");
+      const response = await fetch("https://{your url is here}.firebaseio.com/movies.json");
       if (!response.ok) {
         throw new Error('Something went wrong!');
       }
@@ -43,7 +43,7 @@ const App = () => {
   }, [fetchMoviesHandler]);
 
   const addMovieHandler = async (movie) => {
-    const response = await fetch("https://reacthttp-1e5eb-default-rtdb.firebaseio.com/movies.json", {
+    const response = await fetch("https://{your url is here}.firebaseio.com/movies.json", {
       method: "POST",
       body: JSON.stringify(movie),
       headers: { "Content-Type": "application/json" }
