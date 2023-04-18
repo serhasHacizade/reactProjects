@@ -9,6 +9,8 @@ import CheckOut from './CheckOut';
 
 const Cart = (props) => {
     const [isCheckOut, setIsChechOut] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [didSubmit, setDidSubmit] = useState(false);
     const cartCtx = useContext(CartContext);
 
     const totalAmount = "$ " + cartCtx.totalAmount.toFixed(2)
@@ -25,6 +27,20 @@ const Cart = (props) => {
         setIsChechOut(true);
     };
 
+    const submitOrderHandler = async (userData) => {
+        setIsSubmitting(true);
+        await fetch("https://meals-a0525-default-rtdb.firebaseio.com/orders.json", {
+            method: "POST",
+            body: JSON.stringify({
+                user: userData,
+                orderedItems: cartCtx.items
+            })
+        });
+        setIsSubmitting(false);
+        setDidSubmit(true);
+        cartCtx.clearCart();
+    };
+
     const carItems = <ul className={classes["cartItems"]}>
         {cartCtx.items.map(item => <CartItem key={item.id} name={item.name}
             amount={item.amount} price={item.price} onRemove={carItemRemoveHandler.bind(null, item.id)}
@@ -36,15 +52,24 @@ const Cart = (props) => {
         {hasItems && <button className={classes.button} onClick={orderHandler}>Order</button>}
     </div>
 
+    const cartModalContent = <>
+        {carItems}
+        <span className={classes.total}>Total Amount : {totalAmount}</span>
+        {isCheckOut && <CheckOut onConfirm={submitOrderHandler} onCancel={props.onClose} />}
+        {!isCheckOut && modalActions}
+    </>
+    const isSubmittingModalContent = <p>Sending ordar data...</p>
+    const didSubmitModalContent = <>
+        <p>Succesfully sende the order!</p>
+        <div className={classes.actions}>
+            <button className={classes.button} onClick={props.onClose}>Close</button>
+        </div>
+    </>
     return (
         <Modal onClose={props.onClose}>
-            {carItems}
-
-            <span className={classes.total}>Total Amount : {totalAmount}</span>
-
-            {isCheckOut && <CheckOut />}
-            {!isCheckOut && modalActions}
-
+            {!isSubmitting && !didSubmit && cartModalContent}
+            {isSubmitting && isSubmittingModalContent}
+            {!isSubmitting && didSubmit && didSubmitModalContent}
         </Modal>
     )
 }

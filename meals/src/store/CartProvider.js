@@ -34,8 +34,11 @@ const cartReducer = (state, action) => {
             updatedItems[existingCartItemIndex] = updatedItem;
         }
         return {items : updatedItems, totalAmount : updatedTotalAmount};
-    };
-    return defaultCartState
+    }; 
+    if (action.type === "CLEAR") {
+        return defaultCartState;
+    }
+    return defaultCartState;
 };
 
 const CartProvider = ({ children }) => {
@@ -46,11 +49,17 @@ const CartProvider = ({ children }) => {
     const removeItemToCartHandler = (id) => {
         dispatchCartAction({ type: "REMOVE", id: id });
     };
+
+    const clearCartHandler = () => {
+        dispatchCartAction({type : "CLEAR"});
+    };
+
     const values = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addItemToCartHandler,
-        removeItem: removeItemToCartHandler
+        removeItem: removeItemToCartHandler,
+        clearCart : clearCartHandler
     };
     return (<CartContext.Provider value={values}>{children}</CartContext.Provider>)
 };
