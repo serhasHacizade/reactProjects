@@ -26,6 +26,7 @@ export const fetchCartData = () => {
 };
 
 export const sendCartData = (cart) => {
+  
     return async (dispatch) => {
       dispatch(uiActions.showNotification({
         status: "pending",
