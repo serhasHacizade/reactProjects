@@ -1,6 +1,7 @@
 import MainNavigations from "../components/MainNavigations";
 
 const Error = () => {
+    
     return (<>
         <MainNavigations />
         <main>
