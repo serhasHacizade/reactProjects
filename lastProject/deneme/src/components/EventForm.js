@@ -11,6 +11,7 @@ const EventForm = ({ method, event }) => {
 
   const cancelHandler = () => {navigate('..')};
 
+
   return (
     <Form method={method} className={classes.form}>
       {data && data.errors && <ul>{Object.values(data.errors).map(err => <li key={err}>{err}</li>)}</ul>}
@@ -40,6 +41,8 @@ const EventForm = ({ method, event }) => {
 
 export default EventForm;
 
+
+
 export const action = async ({ request, params }) => {
   const method = request.method;
   const data = await request.formData();
@@ -51,7 +54,7 @@ export const action = async ({ request, params }) => {
   };
 
   let url = "http://localhost:8080/events";
-
+  console.log("selam");
   if (method === "PATCH") {
     const eventId = params.eventId;
     url = "http://localhost:8080/events/" + eventId;

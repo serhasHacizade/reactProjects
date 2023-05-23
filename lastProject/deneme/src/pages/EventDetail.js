@@ -5,6 +5,7 @@ import { Await, defer, json, redirect, useRouteLoaderData } from 'react-router-d
 
 const EventDetail = () => {
   const { event, events } = useRouteLoaderData("event-detail");
+  
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
@@ -23,18 +24,18 @@ const EventDetail = () => {
 
 export default EventDetail;
 
-const loadEvent = async (id) => {
+export const loadEvent = async (id) => {
   const response = await fetch("http://localhost:8080/events/" + id);
   if (!response.ok) {
     throw json({ message: "Could not fetch details for selected event" }, { status: 500 });
   } else {
     const resData = await response.json();
-    return resData.events;
+    return resData.event;
   }
 };
 
 export const loadEvents = async () => {
-  const response = await fetch('http://localhost:8080/events');
+  const response = await fetch("http://localhost:8080/events/");
 
   if (!response.ok) {
     throw json({ message: "Could not fetch events" }, { status: 500 });
