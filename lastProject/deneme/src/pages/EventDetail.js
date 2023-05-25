@@ -48,7 +48,7 @@ export const loadEvents = async () => {
 export const loader = async ({ params }) => {
   const id = params.eventId;
   return defer({
-    event: loadEvent(id),
+    event:  await loadEvent(id),
     events: loadEvents()
   });
 };
