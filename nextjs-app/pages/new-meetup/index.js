@@ -4,8 +4,17 @@ import React from 'react'
 import NewMeetupForm from '../../components/meetups/NewMeetupForm';
 
 const NewsMeetupPage = () => {
-  const addMeetupHandler = (enteredMeetup) => {
-    console.log(enteredMeetup);
+  const addMeetupHandler = async (enteredMeetup) => {
+    const response = await fetch("/api/new-meetup", {
+      method : "POST",
+      body : JSON.stringify(enteredMeetup),
+      headers : {
+        "Content-type" : "application/json"
+      }
+    });
+    const data = await response.json();
+    console.log(data);
+    router.push("/")
   };
 
   return (
