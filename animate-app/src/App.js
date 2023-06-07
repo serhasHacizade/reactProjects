@@ -16,15 +16,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>React Animations</h1>
+
       <button className="Button" onClick={() => setShowBlock(showBlock => showBlock = !showBlock)}>Toggle</button>
       <br />
-      <Transition in={showBlock} timeout={1000} mountOnEnter unmountOnExit
-        onEnter={() => console.log("onEnter")}
-        onEntering={() => console.log("onEntering")}
-        onEntered={() => console.log("onEntered")}
-        onExit={() => console.log("onExit")}
-        onExiting={() => console.log("onExiting")}
-        onExited={() => console.log("onExited")}>
+      <Transition in={showBlock} timeout={1000} mountOnEnter unmountOnExit>
         {state => (
           <div style={{
             backgroundColor: "red",
@@ -38,7 +33,6 @@ const App = () => {
       </Transition>
 
       <Modal show={modalIsOpen} closed={closeModal} />
-
       {modalIsOpen && <Backdrop show />}
       <button className="Button" onClick={showModal}>Open Modal</button>
       <h3>Animating Lists</h3>
