@@ -14,7 +14,7 @@ const MeetUpDetails = (props) => {
 }
 
 export const getStaticPaths = async () => {
-  const client = await MongoClient.connect("mongodb+srv://erenfelek4:q44UHKBOC8hW85Hi@cluster0.vz8lbjz.mongodb.net/meetups?retryWrites=true&w=majority");
+  const client = await MongoClient.connect("mongodb+srv://{your name}:{your password}@cluster0.vz8lbjz.mongodb.net/meetups?retryWrites=true&w=majority");
   const db = client.db("");
   const meetupCollection = db.collection("meetups");
   const meetups = await meetupCollection.find({}, { _id: 1 }).toArray();
@@ -30,7 +30,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const meetupId = context.params.meetupId;
-  const client = await MongoClient.connect("mongodb+srv://erenfelek4:q44UHKBOC8hW85Hi@cluster0.vz8lbjz.mongodb.net/meetups?retryWrites=true&w=majority");
+  const client = await MongoClient.connect("mongodb+srv://{your name}:{your password}@cluster0.vz8lbjz.mongodb.net/meetups?retryWrites=true&w=majority");
   const db = client.db("");
   const meetupCollection = db.collection("meetups");
   const selectedMeetup = await meetupCollection.findOne({ _id: ObjectId(meetupId) });
