@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import CartContext from "../../store/CartContext";
 import CheckOut from './CheckOut';
 
-
 const Cart = (props) => {
     const [isCheckOut, setIsChechOut] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
