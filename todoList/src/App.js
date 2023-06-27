@@ -10,7 +10,7 @@ const App = () => {
       alert("Enter a item");
       return;
     }
-    //every items has a unique id
+    
     const item = {
       id: Math.floor(Math.random() * 1000),
       value: newItem
