@@ -18,7 +18,6 @@ const App = () => {
     setItemsArray(prev => [...prev, item]);
     setNewItem("");
   }
-  //this function is button function, thats delete item
   const deleteItem = id => {
     const newArray = itemsArray.filter(item => item.id !== id);
     setItemsArray(newArray)
