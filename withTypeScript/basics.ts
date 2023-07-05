@@ -47,6 +47,5 @@ let people: {
 let course: string = "React-The complete guide";
 course = 12345;
 
-
 let course: string | number | boolean = "React-The complete guide";
 course = 12345;
