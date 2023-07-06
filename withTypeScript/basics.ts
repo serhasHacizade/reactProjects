@@ -49,3 +49,30 @@ course = 12345;
 
 let course: string | number | boolean = "React-The complete guide";
 course = 12345;
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+let person: Person;
+
+//Functions and types
+function add(a: number, b: number) {
+  return a + b;
+}
+
+function print(value: any) {
+  console.log(value);
+}
+
+//Generics
+
+function insertAtBeginning(array: any[], value: any) {
+  const newArray = [value, ...array];
+  return newArray;
+}
+
+const demoArray = [1, 2, 3];
+const updatedArray = insertAtBeginning(demoArray, -1);
+
