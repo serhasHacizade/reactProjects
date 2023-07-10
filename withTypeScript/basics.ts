@@ -76,7 +76,6 @@ function insertAtBeginning(array: any[], value: any) {
 const demoArray = [1, 2, 3];
 const updatedArray = insertAtBeginning(demoArray, -1);
 //-----------------
-
 function insertAtBeginning2 <T> (array: T[], value: T) {
   const newArray = [value, ...array];
   return newArray;
